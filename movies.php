@@ -29,7 +29,7 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <button type="submit" class="btn btn-primary w-100">Filter</button>
+                <button type="submit" class="btn auth-btn w-100">Filter</button>
             </div>
         </form>
     </div>
@@ -66,7 +66,7 @@
                                 <span class="badge bg-warning text-dark"><i class="fas fa-star"></i> <?php echo $row['rating']; ?></span>
                                 <span class="badge bg-secondary"><?php echo $row['language']; ?></span>
                             </div>
-                            <a href="movie_details.php?id=<?php echo $row['movie_id']; ?>" class="btn btn-primary mt-auto w-100">Book Now</a>
+                            <a href="movie_details.php?id=<?php echo $row['movie_id']; ?>" class="btn auth-btn mt-auto w-100">Book Now</a>
                         </div>
                     </div>
                 </div>

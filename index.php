@@ -12,7 +12,7 @@ require_once 'includes/header.php';
             <p class="hero-subtitle lead text-white-50 mb-4 mx-auto">
                 Your ultimate destination for the latest blockbusters. Experience the magic of cinema with our state-of-the-art screens, immersive sound systems, and premium seating. Book your tickets now and dive into a world of unparalleled entertainment!
             </p>
-            <a href="movies.php" class="btn btn-primary btn-lg hero-btn animate-fade-in" style="animation-delay: 0.2s;">Browse Movies</a>
+            <a href="movies.php" class="btn auth-btn btn-lg hero-btn animate-fade-in" style="animation-delay: 0.2s;">Browse Movies</a>
         </div>
     </div>
 </div>
@@ -44,7 +44,7 @@ require_once 'includes/header.php';
                                 <span class="badge bg-warning text-dark"><i class="fas fa-star"></i> <?php echo $row['rating']; ?></span>
                                 <span class="badge bg-secondary"><?php echo $row['language']; ?></span>
                             </div>
-                            <a href="movie_details.php?id=<?php echo $row['movie_id']; ?>" class="btn btn-primary book-btn mt-auto w-100">Book Now</a>
+                            <a href="movie_details.php?id=<?php echo $row['movie_id']; ?>" class="btn auth-btn book-btn mt-auto w-100">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ require_once 'includes/header.php';
         ?>
     </div>
     <div class="text-center mt-3">
-        <a href="movies.php" class="btn btn-outline-primary">View All Movies</a>
+        <a href="movies.php" class="btn view-btn">View All Movies</a>
     </div>
 </div>
 

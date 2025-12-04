@@ -6,7 +6,7 @@
             <h2 class="admin-title">Manage Theatres</h2>
             <p class="text-white mt-2">Add, Edit, or Remove Theatres and Screens.</p>
         </div>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#theatreModal" onclick="resetTheatreForm()">
+        <button class="btn auth-btn" data-bs-toggle="modal" data-bs-target="#theatreModal" onclick="resetTheatreForm()">
             <i class="fas fa-plus me-2"></i>Add New Theatre
         </button>
     </div>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Theatre</button>
+                    <button type="submit" class="btn auth-btn">Save Theatre</button>
                 </div>
             </form>
         </div>

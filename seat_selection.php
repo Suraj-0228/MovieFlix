@@ -75,7 +75,7 @@
         </div>
         <div class="col-md-4 h-50">
             <div class="card">
-                <div class="card-header d-flex justify-content-center align-items-center bg-primary text-white p-3">
+                <div class="card-header d-flex justify-content-center align-items-center bg-danger text-white p-3">
                     <i class="fas fa-ticket me-3 fa-2xl"></i>
                     <h3 class="mb-0">Booking Summary</h3>
                 </div>
@@ -98,7 +98,7 @@
                         <input type="hidden" name="showtime_id" value="<?php echo $showtime_id; ?>">
                         <input type="hidden" name="selected_seats" id="selected_seats_input">
                         <input type="hidden" name="total_amount" id="total_amount_input">
-                        <button type="submit" class="btn btn-primary w-100 mt-3" id="proceed-btn" disabled>Proceed to Payment</button>
+                        <button type="submit" class="btn auth-btn w-100 mt-3" id="proceed-btn" disabled>Proceed to Payment</button>
                     </form>
                 </div>
             </div>

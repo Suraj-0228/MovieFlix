@@ -6,7 +6,7 @@
             <h2 class="admin-title">Manage Movies</h2>
             <p class="text-white mt-2">Add, Edit, or Remove Movies from the MovieFlix.</p>
         </div>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal" onclick="resetForm()">
+        <button class="btn auth-btn" data-bs-toggle="modal" data-bs-target="#movieModal" onclick="resetForm()">
             <i class="fas fa-plus me-2"></i>Add New Movie
         </button>
     </div>
@@ -155,7 +155,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Movie</button>
+                    <button type="submit" class="btn auth-btn">Save Movie</button>
                 </div>
             </form>
         </div>

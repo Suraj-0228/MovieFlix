@@ -48,7 +48,7 @@
                     <a href="#" class="text-primary text-decoration-none small">Forgot Password?</a>
                 </div>
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-auth">Login</button>
+                    <button type="submit" class="btn auth-btn btn-auth">Login</button>
                 </div>
                 <div class="text-center mt-4">
                     <p class="text-white mb-0">Don't have an account? <a href="register.php" class="text-primary fw-bold text-decoration-none">Register here</a></p>

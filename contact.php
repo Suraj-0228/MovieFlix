@@ -39,7 +39,7 @@ require_once 'includes/header.php';
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-lg w-100 py-2">
+                                <button type="submit" class="btn auth-btn w-100 py-2">
                                     <i class="fas fa-paper-plane me-2"></i>Send Message
                                 </button>
                             </div>
@@ -87,10 +87,10 @@ require_once 'includes/header.php';
                     <div class="mt-5">
                         <h5 class="mb-3">Follow Us</h5>
                         <div class="d-flex gap-3">
-                            <a href="#" class="btn btn-outline-light rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="btn btn-outline-light rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="btn btn-outline-light rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="btn btn-outline-light rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="btn btn-outline-danger rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-outline-danger rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-danger rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-outline-danger rounded-circle p-2" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>

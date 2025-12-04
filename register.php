@@ -45,7 +45,7 @@
                     <p class="text-danger fw-semibold small mt-1 error-msg"></p>
                 </div>
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-auth">Register</button>
+                    <button type="submit" class="btn auth-btn btn-auth">Register</button>
                 </div>
                 <div class="text-center mt-4">
                     <p class="text-white-50 mb-0">Already have an account? <a href="login.php" class="text-primary fw-bold text-decoration-none">Login here</a></p>

@@ -33,7 +33,7 @@ $result = $conn->query($sql);
                                 <i class="fas fa-tv"></i>
                                 <span><?php echo $row['total_screens']; ?> Screens</span>
                             </div>
-                            <a href="movies.php" class="btn btn-theatre">View Movies</a>
+                            <a href="movies.php" class="btn auth-btn w-100 mt-3">View Movies</a>
                         </div>
                     </div>
                 </div>

@@ -156,8 +156,9 @@ a:hover {
 }
 
 /* Buttons */
-.btn-primary {
+.auth-btn {
     background-color: var(--primary-color);
+    color: white;
     border-color: var(--primary-color);
     padding: 0.5rem 1.5rem;
     font-weight: 600;
@@ -165,18 +166,19 @@ a:hover {
     transition: all var(--transition-speed);
 }
 
-.btn-primary:hover {
+.auth-btn:hover {
     background-color: #c40812;
+    color: white;
     border-color: #c40812;
     transform: scale(1.05);
 }
 
-.btn-outline-primary {
+.view-btn {
     color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
-.btn-outline-primary:hover {
+.view-btn:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
@@ -629,22 +631,6 @@ footer {
     width: 20px;
     color: var(--primary-color);
     margin-right: 5px;
-}
-
-.btn-theatre {
-    background-color: transparent;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 6px;
-    transition: all 0.3s;
-    margin-top: 1rem;
-}
-
-.btn-theatre:hover {
-    background-color: var(--primary-color);
-    color: white;
 }
 
 /* Auth Pages (Login/Register) */

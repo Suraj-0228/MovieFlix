@@ -44,7 +44,7 @@
                 <form action="#" class="mb-3">
                     <div class="input-group">
                         <input type="email" class="form-control border-secondary bg-white text-dark" placeholder="Enter Your Email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
+                        <button class="btn auth-btn" type="button">Subscribe</button>
                     </div>
                 </form>
             </div>

@@ -7,7 +7,7 @@ require_once 'includes/header.php';
     <div class="col-md-8 p-lg-5 mx-auto my-5">
         <h1 class="display-4 fw-bold text-white mb-3">Reimagining the Cinema Experience</h1>
         <p class="lead fw-normal text-white-50 mb-4">MovieFlix is your premier destination for seamless movie ticket bookings. We bring the magic of movies closer to you.</p>
-        <a class="btn btn-primary btn-lg px-4 gap-3" href="movies.php">Browse Movies</a>
+        <a class="btn auth-btn btn-lg px-4 gap-3" href="movies.php">Browse Movies</a>
     </div>
 </div>
 <div class="container my-5">

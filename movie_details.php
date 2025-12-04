@@ -75,7 +75,7 @@
                                     <i class="far fa-clock text-primary me-2"></i><?php echo $formatted_time; ?>
                                 </div>
                             </div>
-                            <a href="seat_selection.php?id=<?php echo $show['showtime_id']; ?>" class="btn btn-primary w-100">Select Seats</a>
+                            <a href="seat_selection.php?id=<?php echo $show['showtime_id']; ?>" class="btn auth-btn w-100">Select Seats</a>
                         </div>
                     </div>
                 </div>

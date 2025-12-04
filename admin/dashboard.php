@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="admin-header">
         <h2 class="admin-title">Dashboard Overview</h2>
-        <div class="text-white-50">Welcome back, Admin</div>
+        <div class="text-white-50">Welcome Back, Admin!!</div>
     </div>
     <div class="row g-4 mb-5">
         <div class="col-md-3">

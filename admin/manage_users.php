@@ -31,9 +31,9 @@
                         <?php while ($row = $users->fetch_assoc()): ?>
                             <tr>
                                 <td><span class="text-white">#<?php echo $row['user_id']; ?></span></td>
-                                <td class="fw-bold"><?php echo $row['full_name']; ?></td>
+                                <td class="fw-bold"><?php echo $row['name']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
-                                <td><?php echo $row['phone_number']; ?></td>
+                                <td><?php echo $row['phone']; ?></td>
                                 <td>
                                     <span class="badge bg-<?php echo ($row['role'] == 'admin') ? 'danger' : 'primary'; ?>">
                                         <?php echo ucfirst($row['role']); ?>
@@ -41,7 +41,7 @@
                                 </td>
                                 <td>
                                     <?php if ($row['user_id'] != $_SESSION['user_id']): ?>
-                                        <a href="?delete_user=<?php echo $row['user_id']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this user? This action cannot be undone.')">
+                                        <a href="?delete_user=<?php echo $row['user_id']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you Sura!! You want to Delete this User??')">
                                             <i class="fas fa-trash"></i> Delete
                                         </a>
                                     <?php else: ?>

@@ -17,7 +17,7 @@
                     <a href="#" class="bg-primary text-white px-3 py-2 text-decoration-none rounded mb-1">
                         <i class="fas fa-user-cog"></i> Profile Settings
                     </a>
-                    <a href="logout.php" class="bg-danger text-white px-3 py-2 text-decoration-none rounded mt-2">
+                    <a href="logout.php" class="auth-btn text-white px-3 py-2 text-decoration-none rounded mt-2">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </div>
@@ -29,7 +29,7 @@
             <div class="main-content-card">
                 <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-secondary pb-3">
                     <h4 class="mb-0">MY PROFILE INFO</h4>
-                    <button class="btn btn-success btn-sm" onclick="toggleEditMode()">
+                    <button class="btn btn-success px-4" onclick="toggleEditMode()">
                         <i class="fas fa-edit me-1"></i> Edit Profile
                     </button>
                 </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="d-flex justify-content-end gap-2 mt-4">
                             <button type="button" class="btn btn-secondary" onclick="toggleEditMode()">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="submit" class="btn auth-btn">Save Changes</button>
                         </div>
                     </form>
                 </div>

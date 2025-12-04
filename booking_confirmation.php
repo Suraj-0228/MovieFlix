@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
             <div class="card shadow-sm border-0" style="background-color: #222;">
-                <div class="card-header d-flex justify-content-center align-items-center bg-primary text-white p-3">
+                <div class="card-header d-flex justify-content-center align-items-center bg-danger text-white p-3">
                     <i class="fas fa-ticket me-3 fa-2xl"></i>
                     <h3 class="mb-0">Booking Summary</h3>
                 </div>
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn btn-primary" id="pay-button">Pay ₹<?php echo $total_amount; ?></button>
+                            <button type="submit" class="btn auth-btn" id="pay-button">Pay ₹<?php echo $total_amount; ?></button>
                             <a href="seat_selection.php?id=<?php echo $showtime_id; ?>" class="btn btn-outline-secondary">Cancel</a>
                         </div>
                     </form>

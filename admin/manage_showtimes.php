@@ -6,7 +6,7 @@
             <h2 class="admin-title">Manage Showtimes</h2>
             <p class="text-white mt-2">Schedule Movies for different Screens and Times.</p>
         </div>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showtimeModal" onclick="resetForm()">
+        <button class="btn auth-btn" data-bs-toggle="modal" data-bs-target="#showtimeModal" onclick="resetForm()">
             <i class="fas fa-plus me-2"></i>Add New Showtime
         </button>
     </div>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Showtime</button>
+                    <button type="submit" class="btn auth-btn">Save Showtime</button>
                 </div>
             </form>
         </div>

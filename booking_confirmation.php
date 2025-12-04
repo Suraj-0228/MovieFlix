@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label text-white">CVV</label>
-                                        <input type="password" class="form-control bg-white text-dark" id="card_cvv" placeholder="123" maxlength="3">
+                                        <input type="password" class="form-control bg-white text-dark" id="card_cvv" placeholder="1234" maxlength="4">
                                         <p class="text-danger fw-semibold small mt-1 error-msg"></p>
                                     </div>
                                     <div class="col-12">

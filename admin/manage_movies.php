@@ -148,6 +148,11 @@
                         <p class="text-danger small mt-1 error-msg"></p>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Trailer URL</label>
+                        <input type="url" class="form-control" name="trailer_url" id="trailer_url">
+                        <p class="text-danger small mt-1 error-msg"></p>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Description</label>
                         <textarea class="form-control" name="description" id="description" rows="3"></textarea>
                         <p class="text-danger small mt-1 error-msg"></p>

@@ -28,6 +28,9 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['user_login']) && isset($conn
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/seat.css">
+    <link rel="stylesheet" href="assets/css/details.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -49,6 +52,9 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['user_login']) && isset($conn
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'theatres.php' ? 'active' : ''; ?>" href="theatres.php">Theatres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'membership.php' ? 'active' : ''; ?>" href="membership.php">Membership</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'active' : ''; ?>" href="about.php">About Us</a>

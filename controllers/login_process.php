@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if ($row['role'] == 'admin') {
-            header("Location: admin/dashboard.php");
+            $redirect_url = "admin/dashboard.php";
         } else {
-            header("Location: index.php");
+            $redirect_url = "index.php";
         }
-        exit();
+        $login_success = true; // Trigger popup in view
     } else {
         $error = "Invalid email or password!";
     }

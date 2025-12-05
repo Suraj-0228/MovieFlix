@@ -1,16 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const seats = document.querySelectorAll('.seat.available');
     const selectedSeatsDisplay = document.getElementById('selected-seats-display');
     const totalPriceElement = document.getElementById('total-price');
     const selectedSeatsInput = document.getElementById('selected_seats_input');
     const totalAmountInput = document.getElementById('total_amount_input');
     const proceedBtn = document.getElementById('proceed-btn');
-    
+
     let selectedSeats = [];
     let totalAmount = 0;
 
     seats.forEach(seat => {
-        seat.addEventListener('click', function() {
+        seat.addEventListener('click', function () {
             const seatId = this.getAttribute('data-id');
             const seatPrice = parseFloat(this.getAttribute('data-price'));
             const seatNumber = this.getAttribute('data-number');
@@ -31,14 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateSummary() {
         if (selectedSeats.length === 0) {
-            selectedSeatsDisplay.innerHTML = '<p>No seats selected</p>';
+            selectedSeatsDisplay.innerHTML = '<p class="text-white-50 fst-italic">No Seats Selected!!</p>';
             proceedBtn.disabled = true;
         } else {
-            let html = '<ul class="list-unstyled">';
+            let html = '';
             selectedSeats.forEach(s => {
-                html += `<li>Seat ${s.number} - ₹${s.price}</li>`;
+                html += `<span class="badge bg-danger me-2 mb-2 p-2" style="font-size: 0.9rem;">${s.number}</span>`;
             });
-            html += '</ul>';
             selectedSeatsDisplay.innerHTML = html;
             proceedBtn.disabled = false;
         }

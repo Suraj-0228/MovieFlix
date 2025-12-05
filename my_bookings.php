@@ -88,7 +88,7 @@
                                 <?php if ($can_cancel): ?>
                                     <form method="POST" action="" onsubmit="return confirm('Are you sure you want to cancel this booking? This action cannot be undone.');">
                                         <input type="hidden" name="cancel_booking_id" value="<?php echo $row['booking_id']; ?>">
-                                        <button type="submit" class="btn btn-outline-danger w-100">
+                                        <button type="submit" class="btn auth-btn w-100">
                                             <i class="fas fa-times-circle me-2"></i>Cancel Booking
                                         </button>
                                     </form>

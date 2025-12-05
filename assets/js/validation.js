@@ -2,6 +2,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const forms = document.querySelectorAll('form');
 
     forms.forEach(form => {
+        // Real-time Password Validation
+        const passwordInput = form.querySelector('input[name="password"]');
+        const confirmPasswordInput = form.querySelector('input[name="confirm_password"]');
+
+        if (passwordInput && confirmPasswordInput) {
+            function validatePasswordMatch() {
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                const confirmPasswordError = confirmPasswordInput.parentElement.nextElementSibling;
+
+                if (confirmPassword.length > 0 && password !== confirmPassword) {
+                    if (confirmPasswordError && confirmPasswordError.classList.contains('error-msg')) {
+                        confirmPasswordError.textContent = `Passwords doesn't Match!!`;
+                    }
+                } else {
+                    if (confirmPasswordError && confirmPasswordError.classList.contains('error-msg')) {
+                        confirmPasswordError.textContent = '';
+                    }
+                }
+            }
+
+            passwordInput.addEventListener('input', validatePasswordMatch);
+            confirmPasswordInput.addEventListener('input', validatePasswordMatch);
+        }
+
         form.addEventListener('submit', function (e) {
             let isValid = true;
 
@@ -56,16 +81,31 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Password Validation
-            const passwordInput = form.querySelector('input[type="password"]');
+            const passwordInput = form.querySelector('input[name="password"]');
+            const confirmPasswordInput = form.querySelector('input[name="confirm_password"]');
+
             if (passwordInput) {
                 const password = passwordInput.value;
-                const passwordError = passwordInput.parentElement.nextElementSibling; // Assuming <p> is next sibling
+                const passwordError = passwordInput.parentElement.nextElementSibling;
 
                 if (password.length < 6 || password.length > 15) {
                     if (passwordError && passwordError.classList.contains('error-msg')) {
                         passwordError.textContent = 'Password must be between 6 and 15 Characters!!';
                     }
                     isValid = false;
+                }
+
+                // Confirm Password Validation
+                if (confirmPasswordInput) {
+                    const confirmPassword = confirmPasswordInput.value;
+                    const confirmPasswordError = confirmPasswordInput.parentElement.nextElementSibling;
+
+                    if (confirmPassword !== password) {
+                        if (confirmPasswordError && confirmPasswordError.classList.contains('error-msg')) {
+                            confirmPasswordError.textContent = `Passwords doesn't Match!!`;
+                        }
+                        isValid = false;
+                    }
                 }
             }
 

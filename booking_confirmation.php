@@ -1,120 +1,156 @@
 <?php require_once 'controllers/booking_process.php'; ?>
 
 <div class="container my-5">
-    <div class="row">
-        <div class="col-md-4 order-md-2 mb-4">
-            <div class="card shadow-sm border-0" style="background-color: #222;">
-                <div class="card-header d-flex justify-content-center align-items-center bg-danger text-white p-3">
-                    <i class="fas fa-ticket me-3 fa-2xl"></i>
-                    <h3 class="mb-0">Booking Summary</h3>
-                </div>
-                <div class="card-body text-white">
-                    <h5 class="card-title text-primary mb-3"><?php echo $show['title']; ?></h5>
-                    <p class="small mb-3 text-white">
-                        <i class="fas fa-map-marker-alt me-2 mb-2"></i><?php echo $show['theatre_name']; ?> | <?php echo $show['screen_name']; ?><br>
-                        <i class="far fa-calendar-alt me-2 mb-2"></i><?php echo date('D, d M Y', strtotime($show['show_date'])); ?> | <?php echo date('h:i A', strtotime($show['show_time'])); ?>
-                    </p>
-                    <hr class="border-secondary">
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Seats:</span>
-                        <span><?php echo implode(', ', $seat_numbers); ?></span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Tickets (<?php echo count($selected_seats); ?>):</span>
-                        <span>₹<?php echo $total_amount; ?></span>
-                    </div>
-                    <div class="d-flex justify-content-between mb-2">
-                        <span>Convenience Fee:</span>
-                        <span id="convenience-fee">₹0</span>
-                    </div>
-                    <hr class="border-secondary">
-                    <div class="d-flex justify-content-between fw-bold fs-5">
-                        <span>Total Payable:</span>
-                        <span id="total-payable" class="text-white">₹<?php echo $total_amount; ?></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8 order-md-1">
-            <div class=" shadow-lg border-0" style="background-color: #1f1f1f;">
-                <div class="card-header bg-transparent border-0 pt-4 px-4">
-                    <h3 class="mb-0 text-white">Select Payment Method</h3>
-                </div>
-                <div class="card-body p-4">
-                    <?php if (isset($error_message)): ?>
-                        <div class="alert alert-danger"><?php echo $error_message; ?></div>
-                    <?php endif; ?>
-                    <form method="POST" action="" id="payment-form">
-                        <input type="hidden" name="showtime_id" value="<?php echo $showtime_id; ?>">
-                        <input type="hidden" name="base_amount" id="base_amount" value="<?php echo $total_amount; ?>">
-                        <input type="hidden" name="total_amount" id="final_total_amount" value="<?php echo $total_amount; ?>">
-                        <input type="hidden" name="selected_seats_final" value="<?php echo base64_encode($selected_seats_json); ?>">
-                        <input type="hidden" name="confirm_booking" value="1">
-                        <input type="hidden" name="payment_method" id="payment_method" value="card">
-                        <ul class="nav mb-4 border-bottom-0" id="paymentTab" role="tablist">
+    <div class="row g-5">
+        <!-- Left Column: Payment Options -->
+        <div class="col-md-8">
+            <h3 class="mb-4 text-white">Select Payment Method</h3>
+            
+            <form method="POST" action="" id="payment-form">
+                <!-- Hidden Fields Required for Processing -->
+                <input type="hidden" name="confirm_booking" value="1">
+                <input type="hidden" name="showtime_id" value="<?php echo $showtime_id; ?>">
+                <input type="hidden" name="selected_seats_final" value="<?php echo base64_encode(json_encode($selected_seats)); ?>">
+                <input type="hidden" name="total_amount" id="final_total_amount" value="<?php echo $total_amount; ?>">
+                <input type="hidden" name="payment_method" id="payment_method" value="card">
+
+                <div class="card border-secondary">
+                    <div class="card-header border-secondary p-0">
+                        <ul class="nav nav-tabs border-0" id="paymentTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active text-white bg-transparent border-0 border-bottom border-danger border-2 rounded-0" id="tab-card" data-bs-toggle="tab" data-bs-target="#pills-card" type="button" role="tab" onclick="updatePaymentMethod('card')"><i class="fas fa-credit-card me-2"></i>Card (2% Fee)</button>
+                                <button class="nav-link active text-white bg-transparent border-0 border-bottom border-danger border-3 rounded-0 py-3 px-4" id="tab-card" data-bs-toggle="tab" data-bs-target="#pills-card" type="button" role="tab" onclick="updatePaymentMethod('card')">
+                                    <i class="fas fa-credit-card me-2"></i>Card
+                                </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link text-muted bg-transparent border-0 rounded-0" id="tab-upi"
-                                    data-bs-toggle="tab" data-bs-target="#pills-upi"
-                                    type="button" role="tab" onclick="updatePaymentMethod('upi')">
-                                    <i class="fas fa-mobile-alt me-2"></i>UPI (No Fee)</button>
+                                <button class="nav-link text-muted bg-transparent border-0 rounded-0 py-3 px-4" id="tab-upi" data-bs-toggle="tab" data-bs-target="#pills-upi" type="button" role="tab" onclick="updatePaymentMethod('upi')">
+                                    <i class="fas fa-mobile-alt me-2"></i>UPI
+                                </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link text-muted bg-transparent border-0 rounded-0" id="tab-cash" data-bs-toggle="tab" data-bs-target="#pills-cash" type="button" role="tab" onclick="updatePaymentMethod('cash')"><i class="fas fa-money-bill-wave me-2"></i>Cash (No Fee)</button>
+                                <button class="nav-link text-muted bg-transparent border-0 rounded-0 py-3 px-4" id="tab-cash" data-bs-toggle="tab" data-bs-target="#pills-cash" type="button" role="tab" onclick="updatePaymentMethod('cash')">
+                                    <i class="fas fa-money-bill-wave me-2"></i>Cash
+                                </button>
                             </li>
                         </ul>
+                    </div>
+                    
+                    <div class="card-body p-4">
                         <div class="tab-content" id="pills-tabContent">
+                            <!-- Card Payment -->
                             <div class="tab-pane fade show active" id="pills-card" role="tabpanel">
+                                <div class="alert alert-dark border border-secondary mb-4">
+                                    <i class="fas fa-info-circle me-2 text-info"></i>A 5% Convenience Fee Applies to Card Payments!!
+                                </div>
                                 <div class="row g-3">
                                     <div class="col-12">
-                                        <label class="form-label text-white">Card Number</label>
-                                        <input type="text" class="form-control bg-white text-dark" id="card_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
-                                        <p class="text-danger fw-semibold small mt-1 error-msg"></p>
+                                        <label class="form-label text-white-50">Card Number</label>
+                                        <input type="text" class="form-control bg-white text-black border-secondary" id="card_number" placeholder="0000 0000 0000 0000" maxlength="19">
+                                        <p class="text-danger small mt-1 error-msg"></p>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="form-label text-white">Expiry Date</label>
-                                        <input type="text" class="form-control bg-white text-dark" id="card_expiry" placeholder="MM/YY" maxlength="5">
-                                        <p class="text-danger fw-semibold small mt-1 error-msg"></p>
+                                        <label class="form-label text-white-50">Expiry Date</label>
+                                        <input type="text" class="form-control bg-white text-black border-secondary" id="card_expiry" placeholder="MM/YY" maxlength="5">
+                                        <p class="text-danger small mt-1 error-msg"></p>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="form-label text-white">CVV</label>
-                                        <input type="password" class="form-control bg-white text-dark" id="card_cvv" placeholder="1234" maxlength="4">
-                                        <p class="text-danger fw-semibold small mt-1 error-msg"></p>
+                                        <label class="form-label text-white-50">CVV</label>
+                                        <input type="password" class="form-control bg-white text-black border-secondary" id="card_cvv" placeholder="123" maxlength="4">
+                                        <p class="text-danger small mt-1 error-msg"></p>
                                     </div>
                                     <div class="col-12">
-                                        <label class="form-label text-white">Card Holder Name</label>
-                                        <input type="text" class="form-control bg-white text-dark" id="card_name" placeholder="Name on Card">
-                                        <p class="text-danger fw-semibold small mt-1 error-msg"></p>
+                                        <label class="form-label text-white-50">Card Holder Name</label>
+                                        <input type="text" class="form-control bg-white text-black border-secondary" id="card_name" placeholder="Name on Card">
+                                        <p class="text-danger small mt-1 error-msg"></p>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- UPI Payment -->
                             <div class="tab-pane fade" id="pills-upi" role="tabpanel">
-                                <div class="mb-3">
-                                    <label class="form-label text-white">UPI ID</label>
-                                    <input type="text" class="form-control bg-white text-dark" id="upi_id" placeholder="username@bank">
+                                <div class="alert alert-dark bg-opacity-10 border-secondary mb-4">
+                                    <i class="fas fa-info-circle me-2 text-info"></i>A 2% Convenience Fee Applies to UPI Payments!!
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label text-white-50">UPI ID</label>
+                                    <input type="text" class="form-control bg-white text-black border-secondary" id="upi_id" placeholder="username@upi">
                                     <p class="text-danger small mt-1 error-msg"></p>
-                                    <div class="form-text text-danger">Enter your VPA (Virtual Payment Address)</div>
                                 </div>
-                                <div class="mb-3">
-                                    <p class="text-white mb-2">Scan the QR code using your preferred UPI app to complete the payment.</p>
-                                </div>
-                                <div class="mb-3 d-flex justify-content-center">
-                                    <img src="assets/images/upi_scanner.jpg" alt="UPI Payment" class="upi-img">
+                                <div class="text-center p-3 bg-white rounded" style="max-width: 250px; margin: 0 auto;">
+                                    <img src="assets/images/upi_scanner.jpg" alt="UPI QR Code" class="img-fluid">
+                                    <p class="text-dark small mt-2 mb-0">Scan to Pay</p>
                                 </div>
                             </div>
+
+                            <!-- Cash Payment -->
                             <div class="tab-pane fade" id="pills-cash" role="tabpanel">
-                                <div class="alert alert-info bg-dark border-secondary text-white">
-                                    <i class="fas fa-info-circle me-2"></i>Please pay the amount at the counter to confirm your tickets.
+                                <div class="text-center py-5">
+                                    <div class="mb-3">
+                                        <i class="fas fa-store fa-3x text-warning"></i>
+                                    </div>
+                                    <h5 class="text-white">Pay at Counter</h5>
+                                    <p class="text-white-50">Please, Pay the Amount at the Ticket Counter to Confirm Your Seats!!</p>
+                                    <div class="alert alert-warning d-inline-block mt-2">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>Seats will Be Reserved for 15 Minutes Only.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn auth-btn" id="pay-button">Pay ₹<?php echo $total_amount; ?></button>
-                            <a href="seat_selection.php?id=<?php echo $showtime_id; ?>" class="btn btn-outline-secondary">Cancel</a>
+
+                        <!-- Pay Button -->
+                        <div class="d-grid gap-2 mt-4 pt-4 border-top border-secondary">
+                            <button type="submit" class="btn auth-btn btn-lg fw-bold" id="pay-button">Pay ₹<?php echo $total_amount; ?></button>
                         </div>
-                    </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Right Column: Booking Summary -->
+        <div class="col-md-4">
+            <div class="card bg-dark border-secondary shadow-lg sticky-top" style="top: 100px; z-index: 1000;">
+                <div class="card-header bg-danger text-white p-3 text-center">
+                    <h5 class="mb-0"><i class="fas fa-receipt me-2"></i>Booking Summary</h5>
+                </div>
+                <div class="card-body p-4">
+                    <h4 class="text-white mb-1"><?php echo $show['title']; ?></h4>
+                    <p class="text-white-50 small mb-4"><?php echo $show['theatre_name']; ?> | <?php echo $show['screen_name']; ?></p>
+
+                    <div class="d-flex justify-content-between mb-3 text-white-50">
+                        <span><i class="far fa-calendar me-2"></i>Date</span>
+                        <span class="text-white"><?php echo date('D, d M', strtotime($show['show_date'])); ?></span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3 text-white-50">
+                        <span><i class="far fa-clock me-2"></i>Time</span>
+                        <span class="text-white"><?php echo date('h:i A', strtotime($show['show_time'])); ?></span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3 text-white-50">
+                        <span><i class="fas fa-chair me-2"></i>Seats (<?php echo count($selected_seats); ?>)</span>
+                        <span class="text-white text-end" style="max-width: 150px;"><?php echo implode(', ', $seat_numbers); ?></span>
+                    </div>
+
+                    <hr class="border-secondary my-4">
+
+                    <div class="d-flex justify-content-between mb-2 text-white-50">
+                        <span>Ticket Price</span>
+                        <span class="text-white">₹<?php echo $total_amount; ?></span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 text-white-50">
+                        <span>Convenience Fee</span>
+                        <span class="text-white" id="convenience-fee">₹0</span>
+                    </div>
+
+                    <hr class="border-secondary my-3">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="h5 text-white mb-0">Total:</span>
+                        <span class="h4 text-danger mb-0 fw-bold" id="total-payable">₹<?php echo $total_amount; ?></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-secondary p-3 text-center">
+                    <a href="seat_selection.php?id=<?php echo $showtime_id; ?>" class="text-white-50 text-decoration-none small hover-text-white">
+                        <i class="fas fa-arrow-left me-1"></i>Change Seats
+                    </a>
                 </div>
             </div>
         </div>
@@ -143,7 +179,9 @@
     function calculateTotal(method) {
         let fee = 0;
         if (method === 'card') {
-            fee = Math.round(baseAmount * 0.05); // 5% fee
+            fee = Math.round(baseAmount * 0.42); // 5% fee
+        } else if (method === 'upi') {
+            fee = Math.round(baseAmount * 0.12); // 2% fee
         }
 
         const total = baseAmount + fee;
@@ -155,6 +193,18 @@
     }
 
     updatePaymentMethod('card');
+</script>
+<script>
+    <?php if (isset($error_message)): ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Booking Failed',
+            text: '<?php echo $error_message; ?>',
+            background: '#1f1f1f',
+            color: '#fff',
+            confirmButtonColor: '#e50914'
+        });
+    <?php endif; ?>
 </script>
 <script src="assets/js/payment_validation.js"></script>
 

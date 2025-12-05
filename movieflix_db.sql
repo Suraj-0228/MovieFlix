@@ -117,27 +117,27 @@ INSERT INTO users (name, email, phone, password, role) VALUES
 -- =====================================================================================
    -- INSERT: MOVIE RECORDS (20 MOVIES)
 -- =====================================================================================
-INSERT INTO movies (title, description, genre, language, duration, rating, release_date, poster_url, status) VALUES
-('Singham Again', 'Rohit Shetty returns with another powerful entry in the Singham franchise. Ajay Devgn reprises his role as the fearless cop Bajirao Singham who takes on a new wave of crime and corruption. Packed with intense action, emotional depth, and a star-studded police universe, the film promises pure adrenaline.', 'Action', 'Hindi', 155, 8.3, '2025-03-07', 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Singham_Again_poster.jpg/250px-Singham_Again_poster.jpg', 'now_showing'),
-('Bhoot Police', 'Two brothers who run a fake ghost-hunting business get caught in a real supernatural encounter in the hills of Himachal. A horror-comedy starring Saif Ali Khan and Arjun Kapoor, the film mixes laughs and chills in equal measure.', 'Horror', 'Hindi', 128, 6.8, '2021-09-10', 'https://upload.wikimedia.org/wikipedia/en/4/4f/Bhoot_Police_film_poster.jpg', 'now_showing'),
-('Housefull 5', 'The fifth installment in the Housefull franchise brings back familiar faces and fresh chaos. A madcap comedy of errors involving mistaken identities, lavish weddings, and wild adventures.', 'Comedy', 'Hindi', 150, 6.5, '2025-06-06', 'https://m.media-amazon.com/images/M/MV5BZmIzMThjNTYtNjkwZi00NmM3LTliNGItZWIxYTUwMGU1YzM0XkEyXkFqcGc@._V1_.jpg', 'now_showing'),
-('War 2', 'Hrithik Roshan returns as Kabir in the high-octane sequel to War, teaming up with Jr NTR in a globe-trotting espionage thriller with international action sequences and intense drama.', 'Action', 'Hindi', 160, 8.1, '2025-08-14', 'https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/war-2-et00356501-1755672553.jpg', 'now_showing'),
-('Adhura', 'Set in an elite boarding school, Adhura unravels a terrifying mystery surrounding a missing child and a series of haunting events. A psychological horror blending emotional trauma with dread.', 'Horror', 'Hindi', 124, 7.1, '2024-07-15', 'https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Adhura_Poster.jpg/250px-Adhura_Poster.jpg', 'now_showing'),
-('12th Fail', 'This inspiring drama tells the story of Manoj Sharma, who rose from poverty to become an IPS officer. It beautifully captures the spirit of perseverance, failure, and redemption.', 'Drama', 'Hindi', 147, 8.1, '2023-10-27', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToMxf_SsfLRqnKwc2ubQlH8Ii6Ede0cvhBTw&s', 'coming_soon'),
-('Jawan', 'Shah Rukh Khan takes center stage in Atlee’s high-octane action thriller, portraying a vigilante with a mysterious past. Filled with social justice themes and massive action sequences.', 'Action', 'Hindi', 165, 7.2, '2023-09-07', 'https://resizing.flixster.com/lej1aNFjcromN2hYS5-638hSJ-k=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FiOWE5MWYxLTc0MzctNGNjZi1hMjE0LWNhZmZiMDU2M2RhMS5qcGc=', 'now_showing'),
-('Golmaal Again', 'The gang is back with even more laughter and ghostly mayhem in this horror-comedy ride featuring a haunted mansion and chaos-filled comedy.', 'Comedy', 'Hindi', 152, 8.5, '2021-08-15', 'https://upload.wikimedia.org/wikipedia/en/4/49/Ajay_Devgn%27s_Golmaal_Again_poster.jpg', 'now_showing'),
-('Toxic', 'Yash and Nayanthara headline this intense gangster thriller exploring loyalty, betrayal, and brutal power struggles in the underworld.', 'Thriller', 'Hindi', 158, 7.2, '2025-04-10', 'https://m.media-amazon.com/images/M/MV5BMDZiNzAwZTQtYWIwMC00ODA0LWJiOGMtZTgzZGYzYzMxMDNiXkEyXkFqcGc@._V1_.jpg', 'now_showing'),
-('Fateh', 'Sonu Sood’s directorial debut features him as an ex-intelligence officer dismantling a cyber mafia. A slick, action-packed film mixing technology with emotion.', 'Action', 'Hindi', 140, 7.2, '2025-01-10', 'https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/fateh-et00391731-1734092649.jpg', 'now_showing'),
-('Kantara Chapter 1', 'A spiritual prequel to the acclaimed Kantara diving into divine justice and folklore with stunning visuals and mythological depth.', 'Thriller', 'Hindi', 155, 7.5, '2025-10-02', 'https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Kantara-_Chapter_1_poster.jpg/250px-Kantara-_Chapter_1_poster.jpg', 'now_showing'),
-('Raid 2', 'A direct continuation of the first film where an Income Tax officer exposes powerful figures, raising the stakes with deeper corruption and intensity.', 'Action', 'Hindi', 144, 7.8, '2025-05-01', 'https://stat4.bollywoodhungama.in/wp-content/uploads/2021/12/Raid2-1.jpg', 'coming_soon'),
-('Pushpa 2: The Rule', 'Allu Arjun returns as Pushpa Raj in an explosive sequel continuing his rise in the red sandalwood underworld with intense storytelling and power-packed performances.', 'Thriller', 'Hindi', 170, 8.9, '2025-01-14', 'https://cdn.123telugu.com/content/wp-content/uploads/2024/10/Pushpa2-1.jpg', 'now_showing'),
-('Sikandar', 'Salman Khan stars as a lone warrior caught between crime, politics, and revenge in this high-voltage entertainer.', 'Action', 'Hindi', 150, 7.3, '2025-04-01', 'https://upload.wikimedia.org/wikipedia/en/4/4a/Sikandar_2025_film_poster.jpg', 'now_showing'),
-('Shaitaan', 'Ajay Devgn and R. Madhavan star in this gripping supernatural thriller where a family’s peaceful life turns dark after a stranger enters their home.', 'Horror', 'Hindi', 142, 7.4, '2024-03-08', 'https://m.media-amazon.com/images/M/MV5BOTdlZGE5YmUtZDE1Ny00NzUzLTg2YzYtNWYyMzgyNzRiY2EzXkEyXkFqcGc@._V1_.jpg', 'now_showing'),
-('Chhori 2', 'The sequel to Chhori dives deeper into a cursed village’s horrifying secrets as the protagonist protects her unborn child from haunting forces.', 'Horror', 'Hindi', 138, 7.6, '2024-09-20', 'https://m.media-amazon.com/images/M/MV5BNTFhOTE4MWItZTdmZS00NTI0LTliM2ItNTM4ZjM5MjE0MTYxXkEyXkFqcGc@._V1_.jpg', 'now_showing'),
-('Dragon', 'A fantasy-thriller set in a mythical kingdom featuring breathtaking visuals and intense battles in a story of courage and destiny.', 'Thriller', 'Hindi', 162, 7.9, '2025-02-21', 'https://resizing.flixster.com/idSqXXW1SHplGNnq6W67KnkK-_s=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQyMWQ0OTJhLThkYjYtNDY0MS1hMDNhLTU4NDk3YWExMDllMy5qcGc=', 'now_showing'),
-('Vash 2', 'A chilling continuation of the Shaitaan universe exploring dark magic, curses, and deep psychological horror.', 'Horror', 'Hindi', 140, 7.7, '2025-09-12', 'https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/vash-level-2-et00430860-1755154833.jpg', 'now_showing'),
-('OMG 2', 'A thought-provoking satirical comedy exploring sex education and societal hypocrisy with strong performances.', 'Comedy', 'Hindi', 150, 7.3, '2025-08-01', 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/OMG_2_%E2%80%93_Oh_My_God%21_2_poster.jpg/250px-OMG_2_%E2%80%93_Oh_My_God%21_2_poster.jpg', 'coming_soon'),
-('Drishyam 2', 'Ajay Devgn returns as Vijay Salgaonkar in this gripping sequel where new evidence tests his intelligence and resolve once again.', 'Thriller', 'Hindi', 150, 7.8, '2025-07-19', 'https://filmik.blog/wp-content/uploads/2022/11/Drishyam-2-Movie-.webp', 'coming_soon');
+INSERT INTO movies (title, description, genre, language, duration, rating, release_date, poster_url, trailer_url, status) VALUES
+('Singham Again', 'Rohit Shetty returns with another powerful entry in the Singham franchise. Ajay Devgn reprises his role as the fearless cop Bajirao Singham who takes on a new wave of crime and corruption. Packed with intense action, emotional depth, and a star-studded police universe, the film promises pure adrenaline.', 'Action', 'Hindi', 155, 8.3, '2025-03-07', 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Singham_Again_poster.jpg/250px-Singham_Again_poster.jpg', 'https://youtu.be/DovbhJavvfU?si=ycy0-0yveerAgmUW', 'now_showing'),
+('Bhoot Police', 'Two brothers who run a fake ghost-hunting business get caught in a real supernatural encounter in the hills of Himachal. A horror-comedy starring Saif Ali Khan and Arjun Kapoor, the film mixes laughs and chills in equal measure.', 'Horror', 'Hindi', 128, 6.8, '2021-09-10', 'https://upload.wikimedia.org/wikipedia/en/4/4f/Bhoot_Police_film_poster.jpg', 'https://youtu.be/-j7mGq3s3eA?si=7Gv2omV_wUMdmWDR', 'now_showing'),
+('Housefull 5', 'The fifth installment in the Housefull franchise brings back familiar faces and fresh chaos. A madcap comedy of errors involving mistaken identities, lavish weddings, and wild adventures.', 'Comedy', 'Hindi', 150, 6.5, '2025-06-06', 'https://m.media-amazon.com/images/M/MV5BZmIzMThjNTYtNjkwZi00NmM3LTliNGItZWIxYTUwMGU1YzM0XkEyXkFqcGc@._V1_.jpg', 'https://youtu.be/xGQuT1wm2qk?si=GyvEFJMg4NewdqN2', 'now_showing'),
+('War 2', 'Hrithik Roshan returns as Kabir in the high-octane sequel to War, teaming up with Jr NTR in a globe-trotting espionage thriller with international action sequences and intense drama.', 'Action', 'Hindi', 160, 8.1, '2025-08-14', 'https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/war-2-et00356501-1755672553.jpg', 'https://youtu.be/mjBym9uKth4?si=jgolkxWfXY1ZZ8s4', 'now_showing'),
+('Adhura', 'Set in an elite boarding school, Adhura unravels a terrifying mystery surrounding a missing child and a series of haunting events. A psychological horror blending emotional trauma with dread.', 'Horror', 'Hindi', 124, 7.1, '2024-07-15', 'https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Adhura_Poster.jpg/250px-Adhura_Poster.jpg', 'https://youtu.be/rIPnNOeQrs4?si=KzHC447CD5TTvNdO', 'now_showing'),
+('12th Fail', 'This inspiring drama tells the story of Manoj Sharma, who rose from poverty to become an IPS officer. It beautifully captures the spirit of perseverance, failure, and redemption.', 'Drama', 'Hindi', 147, 8.1, '2023-10-27', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToMxf_SsfLRqnKwc2ubQlH8Ii6Ede0cvhBTw&s', 'https://youtu.be/KjbtuqENvVE?si=Eg3fMHtRO_Be4BGh', 'coming_soon'),
+('Jawan', 'Shah Rukh Khan takes center stage in Atlee’s high-octane action thriller, portraying a vigilante with a mysterious past. Filled with social justice themes and massive action sequences.', 'Action', 'Hindi', 165, 7.2, '2023-09-07', 'https://resizing.flixster.com/lej1aNFjcromN2hYS5-638hSJ-k=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2FiOWE5MWYxLTc0MzctNGNjZi1hMjE0LWNhZmZiMDU2M2RhMS5qcGc=', 'https://youtu.be/MWOlnZSnXJo?si=6vwFe0-odwy4Yp1C', 'now_showing'),
+('Golmaal Again', 'The gang is back with even more laughter and ghostly mayhem in this horror-comedy ride featuring a haunted mansion and chaos-filled comedy.', 'Comedy', 'Hindi', 152, 8.5, '2021-08-15', 'https://upload.wikimedia.org/wikipedia/en/4/49/Ajay_Devgn%27s_Golmaal_Again_poster.jpg', 'https://youtu.be/VgQUwsUHdqc?si=loTZVUnRXf8yz1AA', 'now_showing'),
+('Toxic', 'Yash and Nayanthara headline this intense gangster thriller exploring loyalty, betrayal, and brutal power struggles in the underworld.', 'Thriller', 'Hindi', 158, 7.2, '2025-04-10', 'https://m.media-amazon.com/images/M/MV5BMDZiNzAwZTQtYWIwMC00ODA0LWJiOGMtZTgzZGYzYzMxMDNiXkEyXkFqcGc@._V1_.jpg', 'https://youtu.be/0PfErHA3zzQ?si=RP-WUJrrC9t2aVsd', 'now_showing'),
+('Fateh', 'Sonu Sood’s directorial debut features him as an ex-intelligence officer dismantling a cyber mafia. A slick, action-packed film mixing technology with emotion.', 'Action', 'Hindi', 140, 7.2, '2025-01-10', 'https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/fateh-et00391731-1734092649.jpg', 'https://youtu.be/_qC4mq13crc?si=xPCpjom9GAJR29Pr', 'now_showing'),
+('Kantara Chapter 1', 'A spiritual prequel to the acclaimed Kantara diving into divine justice and folklore with stunning visuals and mythological depth.', 'Thriller', 'Hindi', 155, 7.5, '2025-10-02', 'https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Kantara-_Chapter_1_poster.jpg/250px-Kantara-_Chapter_1_poster.jpg', 'https://youtu.be/l4YbJ2NRdTE?si=vFg5OlQ99ssCuEtO', 'now_showing'),
+('Raid 2', 'A direct continuation of the first film where an Income Tax officer exposes powerful figures, raising the stakes with deeper corruption and intensity.', 'Action', 'Hindi', 144, 7.8, '2025-05-01', 'https://stat4.bollywoodhungama.in/wp-content/uploads/2021/12/Raid2-1.jpg', 'https://youtu.be/kQF1gl7nLaU?si=QkkfYE0zI5z97-1Y', 'coming_soon'),
+('Pushpa 2: The Rule', 'Allu Arjun returns as Pushpa Raj in an explosive sequel continuing his rise in the red sandalwood underworld with intense storytelling and power-packed performances.', 'Thriller', 'Hindi', 170, 8.9, '2025-01-14', 'https://cdn.123telugu.com/content/wp-content/uploads/2024/10/Pushpa2-1.jpg', 'https://youtu.be/g3JUbgOHgdw?si=AJr90moav4brn5MP', 'now_showing'),
+('Sikandar', 'Salman Khan stars as a lone warrior caught between crime, politics, and revenge in this high-voltage entertainer.', 'Action', 'Hindi', 150, 7.3, '2025-04-01', 'https://upload.wikimedia.org/wikipedia/en/4/4a/Sikandar_2025_film_poster.jpg', 'https://youtu.be/BAk5ZCoTWY8?si=Dfihi8WmN-XHO8lX', 'now_showing'),
+('Shaitaan', 'Ajay Devgn and R. Madhavan star in this gripping supernatural thriller where a family’s peaceful life turns dark after a stranger enters their home.', 'Horror', 'Hindi', 142, 7.4, '2024-03-08', 'https://m.media-amazon.com/images/M/MV5BOTdlZGE5YmUtZDE1Ny00NzUzLTg2YzYtNWYyMzgyNzRiY2EzXkEyXkFqcGc@._V1_.jpg', 'https://youtu.be/A_HQdwRDRrw?si=tsJVA4rEMTcy55KN', 'now_showing'),
+('Chhori 2', 'The sequel to Chhori dives deeper into a cursed village’s horrifying secrets as the protagonist protects her unborn child from haunting forces.', 'Horror', 'Hindi', 138, 7.6, '2024-09-20', 'https://m.media-amazon.com/images/M/MV5BNTFhOTE4MWItZTdmZS00NTI0LTliM2ItNTM4ZjM5MjE0MTYxXkEyXkFqcGc@._V1_.jpg', 'https://youtu.be/d4VVkwTw3x4?si=qScurXQEI3dMfWgt', 'now_showing'),
+('Dragon', 'A fantasy-thriller set in a mythical kingdom featuring breathtaking visuals and intense battles in a story of courage and destiny.', 'Thriller', 'Hindi', 162, 7.9, '2025-02-21', 'https://resizing.flixster.com/idSqXXW1SHplGNnq6W67KnkK-_s=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQyMWQ0OTJhLThkYjYtNDY0MS1hMDNhLTU4NDk3YWExMDllMy5qcGc=', 'https://youtu.be/22w7z_lT6YM?si=UBtM1KnbXl6mGPAS', 'now_showing'),
+('Vash 2', 'A chilling continuation of the Shaitaan universe exploring dark magic, curses, and deep psychological horror.', 'Horror', 'Hindi', 140, 7.7, '2025-09-12', 'https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/vash-level-2-et00430860-1755154833.jpg', 'https://youtu.be/mxBh9r5Fglo?si=mo9PLikwD3C4ss3Q', 'now_showing'),
+('OMG 2', 'A thought-provoking satirical comedy exploring sex education and societal hypocrisy with strong performances.', 'Comedy', 'Hindi', 150, 7.3, '2025-08-01', 'https://upload.wikimedia.org/wikipedia/en/thumb/5/56/OMG_2_%E2%80%93_Oh_My_God%21_2_poster.jpg/250px-OMG_2_%E2%80%93_Oh_My_God%21_2_poster.jpg', 'https://youtu.be/Y6ZKXqM7HNQ?si=re5P_JpXCfp3HvmE', 'coming_soon'),
+('Drishyam 2', 'Ajay Devgn returns as Vijay Salgaonkar in this gripping sequel where new evidence tests his intelligence and resolve once again.', 'Thriller', 'Hindi', 150, 7.8, '2025-07-19', 'https://filmik.blog/wp-content/uploads/2022/11/Drishyam-2-Movie-.webp', 'https://youtu.be/cxA2y9Tgl7o?si=Ao8D8KYzDd4__3Wo', 'coming_soon');
 
 -- =====================================================================================
    -- INSERT: THEATRES
@@ -319,3 +319,61 @@ INSERT INTO showtimes (movie_id, screen_id, show_date, show_time) VALUES
 (20, 20, CURDATE(), '13:20:00'),
 (20, 20, CURDATE(), '16:20:00'),
 (20, 20, CURDATE() + INTERVAL 1 DAY, '19:20:00');
+
+-- =====================================================================================
+   -- PROCEDURE: POPULATE SEATS
+-- =====================================================================================
+DELIMITER $$
+CREATE PROCEDURE PopulateSeats()
+BEGIN
+    DECLARE v_screen_id INT;
+    DECLARE v_row CHAR(1);
+    DECLARE v_col INT;
+    DECLARE v_total_screens INT DEFAULT 27;
+    
+    SET v_screen_id = 1;
+    
+    WHILE v_screen_id <= v_total_screens DO
+        -- Regular Rows (A-F, 1-10) -> 60 seats (Price: 150.00)
+        SET v_row = 'A'; 
+        WHILE ASCII(v_row) <= ASCII('F') DO
+            SET v_col = 1;
+            WHILE v_col <= 10 DO
+                INSERT INTO seats (screen_id, seat_number, seat_type, price) VALUES (v_screen_id, CONCAT(v_row, v_col), 'Regular', 150.00);
+                SET v_col = v_col + 1;
+            END WHILE;
+            SET v_row = CHAR(ASCII(v_row) + 1);
+        END WHILE;
+
+        -- Premium Rows (G-H, 1-10) -> 20 seats (Price: 200.00)
+        SET v_row = 'G'; 
+        WHILE ASCII(v_row) <= ASCII('H') DO
+            SET v_col = 1;
+            WHILE v_col <= 10 DO
+                INSERT INTO seats (screen_id, seat_number, seat_type, price) VALUES (v_screen_id, CONCAT(v_row, v_col), 'Premium', 200.00);
+                SET v_col = v_col + 1;
+            END WHILE;
+            SET v_row = CHAR(ASCII(v_row) + 1);
+        END WHILE;
+        
+        -- VIP Rows (I-J, 1-10) -> 20 seats (Price: 300.00)
+        SET v_row = 'I'; 
+        WHILE ASCII(v_row) <= ASCII('J') DO
+            SET v_col = 1;
+            WHILE v_col <= 10 DO
+                INSERT INTO seats (screen_id, seat_number, seat_type, price) VALUES (v_screen_id, CONCAT(v_row, v_col), 'VIP', 300.00);
+                SET v_col = v_col + 1;
+            END WHILE;
+            SET v_row = CHAR(ASCII(v_row) + 1);
+        END WHILE;
+
+        SET v_screen_id = v_screen_id + 1;
+    END WHILE;
+END$$
+DELIMITER ;
+
+-- Execute the procedure to fill seats
+CALL PopulateSeats();
+
+-- Clean up
+DROP PROCEDURE PopulateSeats;

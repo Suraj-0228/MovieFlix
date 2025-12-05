@@ -118,7 +118,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Date</label>
-                            <input type="date" class="form-control" name="show_date" id="show_date">
+                            <input type="date" class="form-control" name="show_date" id="show_date" min="<?php echo date('Y-m-d'); ?>">
                             <p class="text-danger fw-semibold small mt-1 error-msg"></p>
                         </div>
                         <div class="col-md-6 mb-3">

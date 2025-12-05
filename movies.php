@@ -16,8 +16,8 @@
                 <select class="form-select bg-dark border-secondary text-white" name="genre">
                     <option value="">All Genres</option>
                     <option value="Action" <?php echo (isset($_GET['genre']) && $_GET['genre'] == 'Action') ? 'selected' : ''; ?>>Action</option>
-                    <option value="Sci-Fi" <?php echo (isset($_GET['genre']) && $_GET['genre'] == 'Sci-Fi') ? 'selected' : ''; ?>>Sci-Fi</option>
-                    <option value="Drama" <?php echo (isset($_GET['genre']) && $_GET['genre'] == 'Drama') ? 'selected' : ''; ?>>Drama</option>
+                    <option value="Horror" <?php echo (isset($_GET['genre']) && $_GET['genre'] == 'Horror') ? 'selected' : ''; ?>>Horror</option>
+                    <option value="Thriller" <?php echo (isset($_GET['genre']) && $_GET['genre'] == 'Thriller') ? 'selected' : ''; ?>>Thriller</option>
                     <option value="Comedy" <?php echo (isset($_GET['genre']) && $_GET['genre'] == 'Comedy') ? 'selected' : ''; ?>>Comedy</option>
                 </select>
             </div>
@@ -52,7 +52,7 @@
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
         ?>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-5">
                     <div class="card movie-card h-100">
                         <a href="movie_details.php?id=<?php echo $row['movie_id']; ?>">
                             <img src="<?php echo $row['poster_url']; ?>" class="card-img-top" alt="<?php echo $row['title']; ?>">
@@ -73,7 +73,13 @@
         <?php
             }
         } else {
-            echo "<div class='col-12'><p class='text-center'>No movies found matching your criteria.</p></div>";
+            echo "<div class='col-12'>
+                    <div class='text-center p-4 rounded-4 shadow-sm bg-dark border'>
+                        <i class='fa-solid fa-film text-secondary fs-1 mb-2'></i>
+                        <h5 class='fw-bold text-white mb-1'>No Movies Found!!</h5>
+                        <p class='text-white mb-0'>Try Adjusting Your Filters or Searching Again!!</p>
+                    </div>
+                </div>";
         }
         ?>
     </div>

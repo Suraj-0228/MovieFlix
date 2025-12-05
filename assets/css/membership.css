@@ -1,0 +1,241 @@
+/* Membership Page Premium Styles */
+
+/* Hero Section */
+.membership-hero {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.8) 50%, rgba(0, 0, 0, 0.9) 100%),
+        url('../images/membership-bg.jpg');
+    /* Fallback or placeholder */
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(229, 9, 20, 0.15) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Benefits Section */
+.benefit-icon-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.benefit-icon-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: #e50914;
+    margin-bottom: 1rem;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card.plan-gold {
+    border-color: rgba(229, 9, 20, 0.4);
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(40, 20, 20, 0.8));
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.pricing-card.plan-gold:hover {
+    transform: translateY(-15px) scale(1.07);
+    box-shadow: 0 30px 80px rgba(229, 9, 20, 0.2);
+}
+
+.plan-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: #aaa;
+}
+
+.plan-gold .plan-name {
+    color: #e50914;
+}
+
+.plan-price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.plan-duration {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.features-list {
+    margin: 2rem 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.features-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #ddd;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.features-list li i {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.check-icon {
+    color: #00ff88;
+}
+
+.cross-icon {
+    color: #444;
+    opacity: 0.5;
+}
+
+.best-value-ribbon {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: #e50914;
+    color: white;
+    padding: 8px 40px;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Comparison Table */
+.comparison-section {
+    background: #0f0f0f;
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: #ccc;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #fff;
+    width: 30%;
+}
+
+.comparison-table thead th {
+    font-size: 1.2rem;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2rem;
+}
+
+.comparison-table .highlight-col {
+    background: rgba(229, 9, 20, 0.03);
+    color: #fff;
+    font-weight: 600;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* FAQ */
+.accordion-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+}
+
+.accordion-button {
+    font-size: 1.1rem;
+    padding: 1.5rem 0;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-body {
+    padding: 0 0 1.5rem 0;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .pricing-card.plan-gold {
+        transform: none;
+    }
+
+    .pricing-card.plan-gold:hover {
+        transform: translateY(-10px);
+    }
+
+    .comparison-section {
+        padding: 1rem;
+        overflow-x: auto;
+    }
+
+    .comparison-table {
+        min-width: 600px;
+    }
+}

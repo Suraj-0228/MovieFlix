@@ -2,20 +2,19 @@
 
 <div class="container my-5 dark-theme">
     <div class="row g-4">
-        <!-- Sidebar -->
         <div class="col-lg-3">
             <div class="profile-sidebar">
-                <div class="avatar-circle">
+                <div class="avatar-circle bg-danger">
                     <?php echo $initials; ?>
                 </div>
                 <h5 class="mb-1"><?php echo htmlspecialchars($user['name']); ?></h5>
                 <p class="text-muted small mb-4"><?php echo htmlspecialchars($user['email']); ?></p>
                 <div class="d-grid gap-2 sidebar-nav">
-                    <a href="my_bookings.php" class="bg-primary text-white px-3 py-2 text-decoration-none rounded mb-1">
-                        <i class="fas fa-ticket-alt"></i> My Bookings
+                    <a href="membership.php" class="bg-secondary text-white px-3 py-2 text-decoration-none rounded mb-1">
+                        <i class="fas fa-ticket-alt"></i> Membership
                     </a>
-                    <a href="#" class="bg-primary text-white px-3 py-2 text-decoration-none rounded mb-1">
-                        <i class="fas fa-user-cog"></i> Profile Settings
+                    <a href="account_settings.php" class="bg-secondary text-white px-3 py-2 text-decoration-none rounded mb-1">
+                        <i class="fas fa-gear"></i> Account Settings
                     </a>
                     <a href="logout.php" class="auth-btn text-white px-3 py-2 text-decoration-none rounded mt-2">
                         <i class="fas fa-sign-out-alt"></i> Logout
@@ -23,8 +22,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Main Content -->
         <div class="col-lg-9">
             <div class="main-content-card">
                 <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-secondary pb-3">

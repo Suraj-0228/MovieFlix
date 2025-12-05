@@ -17,6 +17,12 @@ if (isset($_GET['delete'])) {
     }
 }
 
+// Check and Add 'trailer_url' column if not exists
+$check_col = $conn->query("SHOW COLUMNS FROM movies LIKE 'trailer_url'");
+if ($check_col->num_rows == 0) {
+    $conn->query("ALTER TABLE movies ADD COLUMN trailer_url VARCHAR(255) DEFAULT NULL AFTER poster_url");
+}
+
 // Handle Add/Edit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $conn->real_escape_string($_POST['title']);
@@ -27,12 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rating = $conn->real_escape_string($_POST['rating']);
     $release_date = $conn->real_escape_string($_POST['release_date']);
     $poster_url = $conn->real_escape_string($_POST['poster_url']);
+    $trailer_url = $conn->real_escape_string($_POST['trailer_url']);
     $status = $conn->real_escape_string($_POST['status']);
 
     if (isset($_POST['movie_id']) && !empty($_POST['movie_id'])) {
         // Update
         $id = $conn->real_escape_string($_POST['movie_id']);
-        $sql = "UPDATE movies SET title='$title', description='$description', genre='$genre', language='$language', duration='$duration', rating='$rating', release_date='$release_date', poster_url='$poster_url', status='$status' WHERE movie_id=$id";
+        $sql = "UPDATE movies SET title='$title', description='$description', genre='$genre', language='$language', duration='$duration', rating='$rating', release_date='$release_date', poster_url='$poster_url', trailer_url='$trailer_url', status='$status' WHERE movie_id=$id";
         if ($conn->query($sql)) {
             $msg = "Movie updated successfully!";
             $msg_type = "success";
@@ -42,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Add
-        $sql = "INSERT INTO movies (title, description, genre, language, duration, rating, release_date, poster_url, status) VALUES ('$title', '$description', '$genre', '$language', '$duration', '$rating', '$release_date', '$poster_url', '$status')";
+        $sql = "INSERT INTO movies (title, description, genre, language, duration, rating, release_date, poster_url, trailer_url, status) VALUES ('$title', '$description', '$genre', '$language', '$duration', '$rating', '$release_date', '$poster_url', '$trailer_url', '$status')";
         if ($conn->query($sql)) {
             $msg = "Movie added successfully!";
             $msg_type = "success";

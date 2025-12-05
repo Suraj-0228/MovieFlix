@@ -15,7 +15,8 @@ function editMovie(movie) {
     document.getElementById('release_date').value = movie.release_date;
     document.getElementById('status').value = movie.status;
     document.getElementById('poster_url').value = movie.poster_url;
+    document.getElementById('trailer_url').value = movie.trailer_url || '';
     document.getElementById('description').value = movie.description;
-    
+
     new bootstrap.Modal(document.getElementById('movieModal')).show();
 }

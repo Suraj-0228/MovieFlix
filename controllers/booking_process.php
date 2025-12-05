@@ -97,9 +97,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             $conn->commit();
-            $success_message = "Booking confirmed! Your Booking ID is #$booking_id";
+            $success_message = "Booking Confirmed! Your Booking ID is #$booking_id";
             // Redirect to My Bookings or show success
-            echo "<script>alert('$success_message'); window.location.href='my_bookings.php';</script>";
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Booking Confirmed!',
+                        text: '$success_message',
+                        background: '#1f1f1f',
+                        color: '#fff',
+                        confirmButtonColor: '#e50914'
+                    }).then((result) => {
+                        window.location.href = 'my_bookings.php';
+                    });
+                });
+            </script>";
+            // exit(); // Removed exit to allow footer to load if needed, but header is already loaded. 
+            // Actually, if we exit here, the rest of the page won't load. 
+            // But we are in a controller included at the top.
+            // If we don't exit, the rest of booking_confirmation.php will try to render.
+            // But we want to redirect.
+            // The issue is that we need the DOM to be ready for SweetAlert.
+            // And we need the SweetAlert library to be loaded.
+            // header.php is included at line 3. So library is there.
+            // But if we exit, the closing body/html tags from footer won't be there.
+            // However, browsers are usually forgiving.
+            // Let's keep it simple.
             exit();
         } catch (Exception $e) {
             $conn->rollback();

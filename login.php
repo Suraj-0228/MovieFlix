@@ -8,18 +8,7 @@
                 <h2 class="auth-title">Welcome Back</h2>
                 <p class="auth-subtitle">Login to continue your cinematic journey</p>
             </div>
-            <?php if ($error): ?>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <i class="fas fa-exclamation-circle me-2"></i><?php echo $error; ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php endif; ?>
-            <?php if ($success_msg): ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="fas fa-check-circle me-2"></i><?php echo $success_msg; ?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php endif; ?>
+            <!-- Alerts replaced by SweetAlert -->
             <form method="POST" action="">
                 <div class="mb-4">
                     <label for="email" class="form-label text-white">Email Address</label>
@@ -45,19 +34,70 @@
                         <input type="checkbox" class="form-check-input bg-dark border-secondary" id="remember" name="remember">
                         <label class="form-check-label text-white" for="remember">Remember me</label>
                     </div>
-                    <a href="#" class="text-primary text-decoration-none small">Forgot Password?</a>
+                    <a href="#" class="text-danger text-decoration-none small">Forgot Password?</a>
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn auth-btn btn-auth">Login</button>
                 </div>
                 <div class="text-center mt-4">
-                    <p class="text-white mb-0">Don't have an account? <a href="register.php" class="text-primary fw-bold text-decoration-none">Register here</a></p>
+                    <p class="text-white mb-0">Don't have an account? <a href="register.php" class="text-danger fw-bold text-decoration-none">Register here</a></p>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
+<script>
+    <?php if ($error): ?>
+        Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: '<?php echo $error; ?>',
+            background: '#1f1f1f',
+            color: '#fff',
+            confirmButtonColor: '#e50914'
+        });
+    <?php endif; ?>
+
+    <?php if (isset($login_success) && $login_success): ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome Back!',
+            text: 'Login Successful. Redirecting To...',
+            background: '#1f1f1f',
+            color: '#fff',
+            confirmButtonColor: '#e50914',
+            timer: 2000,
+            showConfirmButton: false
+        }).then(() => {
+            window.location.href = '<?php echo $redirect_url; ?>';
+        });
+    <?php endif; ?>
+
+    <?php if ($success_msg): ?>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: '<?php echo $success_msg; ?>',
+            background: '#1f1f1f',
+            color: '#fff',
+            confirmButtonColor: '#e50914'
+        });
+    <?php endif; ?>
+
+    // Check for registration success parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('registration') === 'success') {
+        Swal.fire({
+            icon: 'success',
+            title: 'Registration Successful',
+            text: 'You can Now Login to Your Account.',
+            background: '#1f1f1f',
+            color: '#fff',
+            confirmButtonColor: '#e50914'
+        });
+    }
+</script>
 <script src="assets/js/login.js"></script>
 <script src="assets/js/validation.js"></script>
 

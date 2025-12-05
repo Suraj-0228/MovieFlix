@@ -59,6 +59,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
+            // Validate Trailer URL
+            const trailerUrl = document.getElementById('trailer_url');
+            if (trailerUrl && trailerUrl.value.trim() !== '') {
+                const urlPattern = /^(https?:\/\/[^\s$.?#].[^\s]*)$/i;
+                if (!urlPattern.test(trailerUrl.value.trim())) {
+                    setError(trailerUrl, 'Please, Enter a Valid Trailer URL');
+                }
+            }
+
             // Validate Description
             const description = document.getElementById('description');
             if (description && description.value.trim() === '') {

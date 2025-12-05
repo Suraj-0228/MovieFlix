@@ -44,11 +44,22 @@
                     </div>
                     <p class="text-danger fw-semibold small mt-1 error-msg"></p>
                 </div>
+                <div class="mb-4">
+                    <label for="confirm_password" class="form-label text-white-50">Confirm Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white text-dark"><i class="fas fa-lock"></i></span>
+                        <input type="password" class="form-control bg-white text-dark" id="confirm_password" name="confirm_password" placeholder="Confirm your password">
+                        <button class="btn btn-outline-secondary bg-white text-dark border-start-0" type="button" id="toggleConfirmPassword" style="border-color: #ced4da;">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <p class="text-danger fw-semibold small mt-1 error-msg"></p>
+                </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn auth-btn btn-auth">Register</button>
                 </div>
                 <div class="text-center mt-4">
-                    <p class="text-white-50 mb-0">Already have an account? <a href="login.php" class="text-primary fw-bold text-decoration-none">Login here</a></p>
+                    <p class="text-white-50 mb-0">Already have an account? <a href="login.php" class="text-danger fw-bold text-decoration-none">Login here</a></p>
                 </div>
             </form>
         </div>
